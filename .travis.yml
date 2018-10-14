@@ -15,8 +15,8 @@ before_script:
   - dotnet restore
 
 script:
-  - sonar-scanner
   - dotnet build
+  - sonar-scanner -X
 
 cache:
   directories:
