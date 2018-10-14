@@ -4,19 +4,17 @@ sudo: required
 mono: none
 dotnet: 2.1.300
 
-addons:
-  sonarcloud:
-    organization: "virti-github"
-
-jdk:
-  - oraclejdk8
-
-before_script:
+install:
+  - dotnet tool install --global dotnet-sonarscanner
   - dotnet restore
 
+before_script:
+  - export PATH="$PATH:$HOME/.dotnet/tools"
+
 script:
+  - dotnet sonarscanner begin /k:"Virti_vtb" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="$SONAR_KEY" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.cs.opencover.reportsPaths="lcov.opencover.xml" || true
   - dotnet build
-  - sonar-scanner
+  - dotnet sonarscanner end /d:sonar.login="$SONAR_KEY" || true
 
 cache:
   directories:
