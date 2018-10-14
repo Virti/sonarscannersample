@@ -1,0 +1,23 @@
+language: csharp
+dist: trusty
+sudo: required
+mono: none
+dotnet: 2.1.3
+
+addons:
+  sonarcloud:
+    organization: "virti-github"
+
+jdk:
+  - oraclejdk8
+
+before_script:
+  - dotnet restore
+
+script:
+  - sonar-scanner
+  - dotnet build
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'

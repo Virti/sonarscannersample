@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 vtb.Api/appsettings.development.json
+.sonarqube/
