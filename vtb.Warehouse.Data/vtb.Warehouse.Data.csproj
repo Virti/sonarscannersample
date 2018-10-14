@@ -1,19 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <ProjectGuid>04783948-DC32-4CB4-AF1C-C1809BCB1F17</ProjectGuid>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\vtb.Core.DataAccessLayer\vtb.Core.DataAccessLayer.csproj" />
     <ProjectReference Include="..\vtb.Core.Utils\vtb.Core.Utils.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
     <PackageReference Include="wilx.System.Linq.Dynamic.Core" Version="2.1.0" />
   </ItemGroup>
-
 </Project>
